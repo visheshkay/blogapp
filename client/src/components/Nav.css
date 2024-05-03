@@ -1,0 +1,25 @@
+.navmain{
+    color: black;
+    font-size: 1.25rem;
+}
+.nav2{
+    display: flex;
+}
+.nav1{
+    display: block;
+}
+.navchild1{
+    width: 50%;
+}
+.navchild2{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+.navchild2 ul{
+    gap: 2rem;
+}
+.navbar1{
+    background-color: var(--main-yellow);
+}

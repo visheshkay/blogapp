@@ -1,0 +1,103 @@
+GET http://localhost:4000/admin-api/test 
+###
+### user api requests
+GET http://localhost:4000/user-api/test 
+###
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"raj",
+    "password":"raj@123",
+    "email":"raj@mail.com"
+}
+### user login
+POST http://localhost:8000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"raj",
+    "password":"raj@123"
+}
+### comment
+POST http://localhost:8000/user-api/comment/1709577159504
+Content-Type: application/json
+
+{
+    "username":"raj",
+    "comment":"This is a very useful article and the base of all programming"
+}
+### get articles
+GET http://localhost:4000/user-api/articles
+### author api requests
+GET http://localhost:4000/author-api/test 
+###
+POST http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"akshay",
+    "password":"akshay@123",
+    "email":"akshay@mail.com"
+}
+###
+POST http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"akshay",
+    "password":"akshay@123"
+}
+### add new article by author
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Basics of C programming",
+    "category":"programming",
+    "content":"C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.It is a very popular language, despite being old. The main reason for its popularity is because it is a fundamental language in the field of computer science.C is strongly associated with UNIX, as it was developed to write the UNIX operating system.",
+    "dateOfCreation":"${{$datetime iso8601}}",
+    "dateOfModification":"${{$datetime iso8601}}",
+    "username":"akshay",
+    "comments":[],
+    "status":true
+}
+###
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"$1708955806",
+    "title":"Basics of C programming",
+    "category":"programming",
+    "content":"C is a general-",
+    "dateOfCreation":"$2024-02-26T13:56:46.422Z",
+    "dateOfModification":"${{$datetime iso8601}}",
+    "username":"akshay",
+    "comments":[],
+    "status":true
+}
+###
+PUT http://localhost:4000/author-api/article/$1708955806
+Content-Type: application/json
+
+{
+    "articleId":"$1708955806",
+    "title":"Basics of C programming",
+    "category":"programming",
+    "content":"C is a general-",
+    "dateOfCreation":"$2024-02-26T13:56:46.422Z",
+    "dateOfModification":"${{$datetime iso8601}}",
+    "username":"akshay",
+    "comments":[],
+    "status":true
+}
+###
+GET http://localhost:4000/author-api/articles/akshay
+###
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFrc2hheSIsImlhdCI6MTcwODUzNTM0OCwiZXhwIjoxNzA4NTM1NDA4fQ.KQFasTKnR0tMTwVRw_aG4EHpNmb2_qHq0KwuR-FBOWY

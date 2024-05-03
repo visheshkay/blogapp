@@ -1,0 +1,12 @@
+.homemain{
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+.homedesc{
+    padding: 2rem;
+}
+.homeblog{
+    display: block;
+    margin: auto;
+    width: 20rem;
+}

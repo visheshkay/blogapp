@@ -1,0 +1,10 @@
+.items1{
+    display: flex;
+    gap: 5rem;
+}
+.authorprof ul .active{
+    padding: 1.2rem;
+    color: white !important;
+    background-color: var(--main-yellow) !important;
+    border-radius: 5rem;
+}
