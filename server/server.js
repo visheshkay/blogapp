@@ -43,4 +43,4 @@ app.use((err,req,res,next)=>{
     res.send({message:"error",payload:err.message})
 })
 let port = process.env.PORT || 5000
-app.listen(8000,()=>{console.log(`server running on port ${port}`)})
+app.listen(port,()=>{console.log(`server running on port ${port}`)})
